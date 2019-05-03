@@ -1,11 +1,25 @@
-# production 
+# Node
+node_modules
+.npm
+.node_repl_history
+.lock-wscript
+logs
+*.log
+npm-debug.log*
 
-.expo/*
-.history/*
+# Compiled
+build/
 
-# misc
+# Dependency directories
+node_modules/
 
+# Optional npm cache directory
+.npm
+
+# dotenv environment variables file
+.env
+.env.test
+
+# Misc
 .DS_Store
-
-# node
-node_modules/*
+.history/
