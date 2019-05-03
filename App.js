@@ -1,10 +1,13 @@
+// google api key AIzaSyA1nqDGW_hVzbMreRNsj1sfATHSWJnXIrs
+
 import React from "react";
 import {
   StyleSheet,
   View,
   Text,
   TouchableOpacity,
-  Platform
+  Platform,
+  PermissionsAndroid
 } from "react-native";
 import MapView, {
   Marker,
@@ -42,8 +45,8 @@ class App extends React.Component {
     this.watchID = navigator.geolocation.watchPosition(
       position => {
         const { routeCoordinates, distanceTravelled } = this.state;
-        const { latitude, longitude } = position.coords;
-
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
         const newCoordinate = {
           latitude,
           longitude
@@ -60,7 +63,6 @@ class App extends React.Component {
         } else {
           coordinate.timing(newCoordinate).start();
         }
-
         this.setState({
           latitude,
           longitude,
